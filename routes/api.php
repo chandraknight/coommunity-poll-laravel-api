@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\FilesController;
 use App\Http\Controllers\Api\PollsController;
 use App\Http\Controllers\Api\QuestionsController;
 use Illuminate\Http\Request;
@@ -27,3 +28,6 @@ Route::delete('poll/delete/{poll}',[PollsController::class,'destory'])->name('po
 Route::any('errors',[PollsController::class,'errors'])->name('poll.errors');
 Route::apiResource('questions',QuestionsController::class);
 Route::get('polls/{poll}/questions',[PollsController::class,'questions'])->name('poll.questions');
+
+Route::get('files/get', [FilesController::class,'show'])->name('files.show');
+Route::post('files/create', [FilesController::class,'create'])->name('files.store');
