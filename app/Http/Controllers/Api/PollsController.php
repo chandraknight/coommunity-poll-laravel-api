@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Validator;
 class PollsController extends Controller{
     //
     public function index(){
-        return response()->json(Poll::all(),200);
+        return response()->json(Poll::paginate(1),200);
     }
 
     public function show($id){
