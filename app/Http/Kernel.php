@@ -46,6 +46,7 @@ class Kernel extends HttpKernel
             \App\Http\Middleware\Logging::class,
             'httpHeaders:come work for SNS',
             \App\Http\Middleware\TokenAuth::class,
+            \App\Http\Middleware\BacicAuth::class,
         ],
     ];
 
