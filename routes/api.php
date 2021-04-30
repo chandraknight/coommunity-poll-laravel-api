@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\PollsController;
+use App\Http\Controllers\Api\QuestionsController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -24,3 +25,5 @@ Route::post('poll/store',[PollsController::class,'store'])->name('poll.store');
 Route::put('poll/update/{poll}',[PollsController::class,'update'])->name('poll.update');
 Route::delete('poll/delete/{poll}',[PollsController::class,'destory'])->name('poll.destory');
 Route::any('errors',[PollsController::class,'errors'])->name('poll.errors');
+Route::apiResource('questions',QuestionsController::class);
+Route::get('polls/{poll}/questions',[PollsController::class,'questions'])->name('poll.questions');
