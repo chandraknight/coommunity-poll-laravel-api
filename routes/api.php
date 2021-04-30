@@ -19,3 +19,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 Route::get('polls',[PollsController::class,'index'])->name('polls.all');
+Route::get('poll/{id}',[PollsController::class,'show'])->name('poll.show');
+Route::post('poll/store',[PollsController::class,'store'])->name('poll.store');
+Route::put('poll/update/{poll}',[PollsController::class,'update'])->name('poll.update');
+Route::delete('poll/delete/{poll}',[PollsController::class,'destory'])->name('poll.destory');
+Route::any('errors',[PollsController::class,'errors'])->name('poll.errors');
